@@ -10,26 +10,9 @@ export default () => {
   const carouselRef = useRef(null);
 
   const [lista, setLista] = useState([
-    {
-        title:"Spider-Man: Miles Morales",
-        text: "Spider-Man: Miles Morales é um jogo eletrônico de ação-aventura desenvolvido pela Insomniac Games e publicado pela Sony Interactive Entertainment para o PlayStation 4 e PlayStation 5.",
-        release: 2020,
-        img: 'https://upload.wikimedia.org/wikipedia/pt/7/74/Spider-Man_Miles_Morales_capa.png'
-    },
-    {
-        title:"Cyberpunk 2077",
-        text: "Cyberpunk 2077 é um jogo eletrônico de RPG de ação desenvolvido e publicado pela CD Projekt. Lançado em 10 de dezembro de 2020 para Google Stadia, Microsoft Windows, PlayStation 4 e Xbox One, e previsto para 2021 para PlayStation 5 e Xbox Series X/S, sendo que nesses já está disponível via retrocompatibilidade.",
-        release: 2020,
-        img: 'https://bdjogos.com.br/capas/3425-Cyberpunk-2077-capa-1.jpg'
-    },
-    {
-        title:"Sackboy: Uma Grande Aventura",
-        text: "Traduzido do inglês-Sackboy: A Big Adventure é um jogo de plataforma de 2020 desenvolvido pela Sumo Digital e publicado pela Sony Interactive Entertainment para PlayStation 5 e PlayStation 4. Um spinoff da série LittleBigPlanet, segue Sackboy e apresenta plataforma 3D em oposição a 2.5D em entradas anteriores.",
-        release: 2020,
-        img: 'https://image.api.playstation.com/vulcan/img/rnd/202011/0517/tO2VJKlZdyrYiGnHA1J38ZdR.png'
-    }]);
+   
 
-    const [fundo, setFundo] = useState(lista[0].img);
+  const [fundo, setFundo] = useState(lista[0].img);
 
   return (
     <ScrollView>
