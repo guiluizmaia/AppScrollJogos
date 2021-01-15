@@ -6,30 +6,30 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const {width: screenWidth, height: screenHeight} = Dimensions.get('window');
 
-export default () => {
+export default ({route, navigation}) => {
   const carouselRef = useRef(null);
+  
+  const { nome } = route.params;
 
-  const [lista, setLista] = useState([
-   
 
-  const [fundo, setFundo] = useState(lista[0].img);
+  //const [fundo, setFundo] = useState(lista[0].img);
 
   return (
     <ScrollView>
       <View style={{flex:1, height: screenHeight}}>
         <View style={{...StyleSheet.absoluteFill, backgroundColor: '#000'}}>
-          <ImageBackground source={{uri: fundo}} style={styles.imgFundo} blurRadius={8}>
+          {/*<ImageBackground source={{uri: fundo}} style={styles.imgFundo} blurRadius={8}>
         
             
             <View style={styles.slideView}>
               <Carousel          
               />
-            </View>
+  </View>*/}
 
             <View style={styles.moreInfo}>
               <View style={{marginTop: 10}}>
-                <Text style={styles.movieTitle}>{lista[indexAtivo].title}</Text>
-                <Text style={styles.movieDesc}>{lista[indexAtivo].text}</Text>
+                <Text style={styles.movieTitle}>{JSON.stringify(nome)}</Text>
+                {/*<Text style={styles.movieDesc}>{lista[indexAtivo].text}</Text>*/}
               </View>
               <TouchableOpacity 
               style={{ marginRight: 15, marginTop: 10 }} 
@@ -38,7 +38,7 @@ export default () => {
                 
               </TouchableOpacity>
             </View>
-          </ImageBackground>
+          {/*</ImageBackground>*/}
 
         </View>
       </View>

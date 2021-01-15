@@ -44,7 +44,7 @@ export default ({navigation}) => {
   const _renderItem = ({ item, index }) => {
     return(
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('moreInfo')}>
+        <TouchableOpacity onPress={() => navigation.navigate('moreInfo', { nome: lista[indexAtivo].title,})}>
           <Image source={{uri: item.img}} style={styles.caroImg}/>
           <Text style={styles.caroText}>{item.title}</Text>
           <Icon name="play-circle-outline" size={30} color="#fff" style={styles.caroIcon}/>
@@ -89,7 +89,7 @@ export default ({navigation}) => {
               </View>
               <TouchableOpacity 
               style={{ marginRight: 15, marginTop: 10 }} 
-              onPress={() => navigation.navigate('moreInfo')}
+              onPress={() => navigation.navigate('moreInfo', { nome:'teste'})}
               >
                 <Icon 
                 name="queue" 
