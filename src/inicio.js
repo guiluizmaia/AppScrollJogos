@@ -44,7 +44,15 @@ export default ({navigation}) => {
   const _renderItem = ({ item, index }) => {
     return(
       <View>
-        <TouchableOpacity onPress={() => navigation.navigate('moreInfo', { nome: lista[indexAtivo].title,})}>
+        <TouchableOpacity onPress={() => navigation.navigate('moreInfo', { 
+          title: lista[indexAtivo].title,
+          text: lista[indexAtivo].text,
+          release: lista[indexAtivo].release,
+          img: lista[indexAtivo].img,
+          img1: lista[indexAtivo].img1,
+          img2: lista[indexAtivo].img2,
+          img3: lista[indexAtivo].img3,
+          })}>
           <Image source={{uri: item.img}} style={styles.caroImg}/>
           <Text style={styles.caroText}>{item.title}</Text>
           <Icon name="play-circle-outline" size={30} color="#fff" style={styles.caroIcon}/>
@@ -84,12 +92,20 @@ export default ({navigation}) => {
             </View>
             <View style={styles.moreInfo}>
               <View style={{marginTop: 10}}>
-                <Text style={styles.movieTitle}>{lista[indexAtivo].title}</Text>
-                <Text style={styles.movieDesc}>{lista[indexAtivo].text}</Text>
+                <Text style={styles.gameTitle}>{lista[indexAtivo].title}</Text>
+                <Text style={styles.gameDesc}>{lista[indexAtivo].text}</Text>
               </View>
               <TouchableOpacity 
               style={{ marginRight: 15, marginTop: 10 }} 
-              onPress={() => navigation.navigate('moreInfo', { nome:'teste'})}
+              onPress={() => navigation.navigate('moreInfo', { 
+                title: lista[indexAtivo].title,
+                text: lista[indexAtivo].text,
+                release: lista[indexAtivo].release,
+                img: lista[indexAtivo].img,
+                img1: lista[indexAtivo].img1,
+                img2: lista[indexAtivo].img2,
+                img3: lista[indexAtivo].img3,
+                })}
               >
                 <Icon 
                 name="queue" 
@@ -119,7 +135,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000'
   },
   viewSearch:{
-    marginTop: 20,
+    marginTop: 35,
     backgroundColor: '#FFF',
     elevation: 10,
     borderRadius: 5,
@@ -178,14 +194,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
-  movieTitle:{
+  gameTitle:{
     paddingLeft: 15,
     fontSize: 22,
     fontWeight: 'bold',
     color: '#131313',
     marginBottom: 5,
   },
-  movieDesc:{
+  gameDesc:{
     paddingLeft: 15,
     color: '#131313',
     fontSize: 14,
